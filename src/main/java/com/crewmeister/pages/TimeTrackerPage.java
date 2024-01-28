@@ -13,34 +13,34 @@ public class TimeTrackerPage {
     }
 
     public void clockIn() {
-        WebElement clockInButton = driver.findElement(By.id("span[data-e2e-test='stamp-watch-start-work']"));
+        WebElement clockInButton = driver.findElement(By.cssSelector("span[data-e2e-test='stamp-watch-start-work']"));
         clockInButton.click();
     }
 
     public boolean isClockOutButtonDisplayed() {
-        return driver.findElement(By.id("span[data-e2e-test='stamp-watch-stop-work']")).isDisplayed();
+        return driver.findElement(By.cssSelector("span[data-e2e-test='stamp-watch-stop-work']")).isDisplayed();
     }
 
     public void clockOut() {
-        WebElement clockOutButton = driver.findElement(By.id("span[data-e2e-test='stamp-watch-stop-work']"));
+        WebElement clockOutButton = driver.findElement(By.cssSelector("span[data-e2e-test='stamp-watch-stop-work']"));
         clockOutButton.click();
     }
 
     public void Done() {
-        WebElement clockOutButton = driver.findElement(By.id("#page-time-tracking-done"));
+        WebElement clockOutButton = driver.findElement(By.cssSelector("#page-time-tracking-done"));
         clockOutButton.click();
     }
 
     public boolean isDoneButtonDisplayed() {
-        return driver.findElement(By.id("\"#page-time-tracking-done")).isDisplayed();
+        return driver.findElement(By.cssSelector("\"#page-time-tracking-done")).isDisplayed();
     }
 
     public boolean isClockInButtonDisplayed() {
-        return driver.findElement(By.id("\"span[data-e2e-test='stamp-watch-start-work']")).isDisplayed();
+        return driver.findElement(By.cssSelector("\"span[data-e2e-test='stamp-watch-start-work']")).isDisplayed();
     }
 
     public String getTimeTableText() {
-        return driver.findElement(By.id("body > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(6) > div:nth-child(2) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > div:nth-child(1) > div:nth-child(1)")).getText();
+        return driver.findElement(By.cssSelector("body > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(6) > div:nth-child(2) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > div:nth-child(1) > div:nth-child(1)")).getText();
     }
 
     public void clickEditLastEntry() {
