@@ -20,13 +20,18 @@ public class TimeTrackerTest {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Zar\\Documents\\Google\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get(Constants.TIME_TRACKER_URL);
+        login();
     }
 
     @AfterEach
     void tearDown() {
         driver.quit();
     }
-
+    private void login() {
+        driver.findElement(By.id("email")).sendKeys("tatsenko.tetiana@gmail.com");
+        driver.findElement(By.id("password")).sendKeys("12345");
+        driver.findElement(By.cssSelector("button[type='submit']")).click();
+    }
     @Test
     void testClockInClockOut() {
         TimeTrackerPage timeTrackerPage = new TimeTrackerPage(driver);
